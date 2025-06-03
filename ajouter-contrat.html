@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndewa360° - Ajouter un contrat de location</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Barre de navigation mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50">
+        <div class="flex justify-around py-2">
+            <a href="index.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-home text-xl"></i>
+                <span class="text-xs">Accueil</span>
+            </a>
+            <a href="biens.html" class="flex flex-col items-center text-yellow-600">
+                <i class="fas fa-building text-xl"></i>
+                <span class="text-xs">Biens</span>
+            </a>
+            <a href="finances.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-chart-line text-xl"></i>
+                <span class="text-xs">Finances</span>
+            </a>
+            <a href="locataires.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-users text-xl"></i>
+                <span class="text-xs">Locataires</span>
+            </a>
+            <a href="profil.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-user text-xl"></i>
+                <span class="text-xs">Profil</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- En-tête -->
+    <header class="bg-white shadow-md p-4 flex items-center justify-between sticky top-0 z-40">
+        <div class="flex items-center">
+            <a href="details-locations.html" class="text-blue-500 mr-2">
+                <i class="fas fa-arrow-left"></i> RETOUR
+            </a>
+        </div>
+        <h1 class="text-lg font-semibold">Ajouter un contrat</h1>
+        <div class="w-8"></div>
+    </header>
+
+    <!-- Info bien -->
+    <div class="bg-white shadow-sm mb-4">
+        <div class="flex items-center p-4">
+            <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                <span>D</span>
+            </div>
+            <div>
+                <h2 class="font-semibold">Maison en terre</h2>
+                <p class="text-xs text-gray-500">#PROF_V33</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <main class="container mx-auto px-4 py-4 mb-20">
+        <!-- Formulaire d'ajout de contrat -->
+        <form class="space-y-6">
+            <!-- Parties impliquées -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Parties impliquées</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="property" class="block text-sm font-medium text-gray-700 mb-1">
+                            Bien immobilier <span class="text-red-500">*</span>
+                        </label>
+                        <select id="property" name="property" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                            <option value="" disabled>Sélectionner un bien</option>
+                            <option value="1" selected>Maison en terre (#PROF_V33)</option>
+                            <option value="2">Villa Francine (#VILLA_F12)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="unit" class="block text-sm font-medium text-gray-700 mb-1">
+                            Unité locative <span class="text-red-500">*</span>
+                        </label>
+                        <select id="unit" name="unit" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                            <option value="" disabled selected>Sélectionner une unité</option>
+                            <option value="1">Chambre room_K66</option>
+                            <option value="2">Chambre room_J31</option>
+                            <option value="3">Chambre room_F15</option>
+                            <option value="4">Chambre room_A22</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="tenant" class="block text-sm font-medium text-gray-700 mb-1">
+                            Locataire <span class="text-red-500">*</span>
+                        </label>
+                        <select id="tenant" name="tenant" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                            <option value="" disabled selected>Sélectionner un locataire</option>
+                            <option value="1">GONG</option>
+                            <option value="2">NGWA NEBA</option>
+                            <option value="3">TANTOH</option>
+                        </select>
+                        <div class="mt-2 flex justify-end">
+                            <a href="ajouter-locataire.html" class="text-yellow-600 text-sm flex items-center">
+                                <i class="fas fa-plus mr-1"></i> Ajouter un nouveau locataire
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Durée du contrat -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Durée du contrat</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="startDate" class="block text-sm font-medium text-gray-700 mb-1">
+                            Date de début <span class="text-red-500">*</span>
+                        </label>
+                        <input type="date" id="startDate" name="startDate" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                    </div>
+                    
+                    <div>
+                        <label for="duration" class="block text-sm font-medium text-gray-700 mb-1">
+                            Durée du bail <span class="text-red-500">*</span>
+                        </label>
+                        <select id="duration" name="duration" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                            <option value="" disabled selected>Sélectionner une durée</option>
+                            <option value="month-to-month">Mois par mois</option>
+                            <option value="3months">3 mois</option>
+                            <option value="6months">6 mois</option>
+                            <option value="1year">1 an</option>
+                            <option value="2years">2 ans</option>
+                            <option value="custom">Personnalisée</option>
+                        </select>
+                    </div>
+                    
+                    <div id="customDuration" class="hidden">
+                        <label for="endDate" class="block text-sm font-medium text-gray-700 mb-1">
+                            Date de fin
+                        </label>
+                        <input type="date" id="endDate" name="endDate" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    </div>
+                    
+                    <div>
+                        <label for="renewalType" class="block text-sm font-medium text-gray-700 mb-1">
+                            Type de renouvellement
+                        </label>
+                        <select id="renewalType" name="renewalType" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <option value="" disabled selected>Sélectionner une option</option>
+                            <option value="automatic">Renouvellement automatique</option>
+                            <option value="manual">Renouvellement manuel</option>
+                            <option value="none">Pas de renouvellement</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informations financières -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Informations financières</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="rentAmount" class="block text-sm font-medium text-gray-700 mb-1">
+                            Montant du loyer (FCFA) <span class="text-red-500">*</span>
+                        </label>
+                        <input type="number" id="rentAmount" name="rentAmount" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 25000" required>
+                    </div>
+                    
+                    <div>
+                        <label for="paymentFrequency" class="block text-sm font-medium text-gray-700 mb-1">
+                            Fréquence de paiement
+                        </label>
+                        <select id="paymentFrequency" name="paymentFrequency" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <option value="monthly" selected>Mensuel</option>
+                            <option value="quarterly">Trimestriel</option>
+                            <option value="biannual">Semestriel</option>
+                            <option value="annual">Annuel</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="paymentDueDay" class="block text-sm font-medium text-gray-700 mb-1">
+                            Jour d'échéance du paiement
+                        </label>
+                        <input type="number" id="paymentDueDay" name="paymentDueDay" min="1" max="31" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 5" value="1">
+                        <p class="text-xs text-gray-500 mt-1">Jour du mois où le paiement est dû</p>
+                    </div>
+                    
+                    <div>
+                        <label for="deposit" class="block text-sm font-medium text-gray-700 mb-1">
+                            Caution (FCFA)
+                        </label>
+                        <input type="number" id="deposit" name="deposit" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 25000">
+                    </div>
+                    
+                    <div>
+                        <label for="lateFeesAmount" class="block text-sm font-medium text-gray-700 mb-1">
+                            Pénalité de retard (FCFA)
+                        </label>
+                        <input type="number" id="lateFeesAmount" name="lateFeesAmount" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 1000">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conditions particulières -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Conditions particulières</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="specialTerms" class="block text-sm font-medium text-gray-700 mb-1">
+                            Conditions spéciales
+                        </label>
+                        <textarea id="specialTerms" name="specialTerms" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ajoutez des conditions particulières au contrat..."></textarea>
+                    </div>
+                    
+                    <div class="pt-2">
+                        <div class="flex items-center mb-3">
+                            <input type="checkbox" id="petsAllowed" name="petsAllowed" class="w-4 h-4 text-yellow-600 border-gray-300 rounded focus:ring-yellow-500">
+                            <label for="petsAllowed" class="ml-2 text-sm text-gray-700">Animaux autorisés</label>
+                        </div>
+                        
+                        <div class="flex items-center mb-3">
+                            <input type="checkbox" id="smokingAllowed" name="smokingAllowed" class="w-4 h-4 text-yellow-600 border-gray-300 rounded focus:ring-yellow-500">
+                            <label for="smokingAllowed" class="ml-2 text-sm text-gray-700">Fumeurs autorisés</label>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" id="maintenanceIncluded" name="maintenanceIncluded" class="w-4 h-4 text-yellow-600 border-gray-300 rounded focus:ring-yellow-500">
+                            <label for="maintenanceIncluded" class="ml-2 text-sm text-gray-700">Entretien inclus</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Documents</h2>
+                
+                <div class="space-y-3">
+                    <div class="border border-dashed border-gray-300 rounded-md p-4 text-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-file-signature text-gray-400 text-2xl mb-2"></i>
+                            <p class="text-sm text-gray-500">Contrat signé</p>
+                            <button type="button" class="mt-2 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-3 rounded-md">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-dashed border-gray-300 rounded-md p-4 text-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-file-invoice text-gray-400 text-2xl mb-2"></i>
+                            <p class="text-sm text-gray-500">État des lieux</p>
+                            <button type="button" class="mt-2 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-3 rounded-md">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-dashed border-gray-300 rounded-md p-4 text-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-file text-gray-400 text-2xl mb-2"></i>
+                            <p class="text-sm text-gray-500">Autres documents</p>
+                            <button type="button" class="mt-2 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-3 rounded-md">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons d'action -->
+            <div class="flex space-x-3">
+                <button type="button" class="w-1/2 py-3 bg-gray-200 text-gray-700 font-medium rounded-md">
+                    Annuler
+                </button>
+                <button type="submit" class="w-1/2 py-3 bg-yellow-500 text-white font-medium rounded-md">
+                    Enregistrer
+                </button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

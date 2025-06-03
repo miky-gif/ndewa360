@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndewa360° - Ajouter un locataire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Barre de navigation mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50">
+        <div class="flex justify-around py-2">
+            <a href="index.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-home text-xl"></i>
+                <span class="text-xs">Accueil</span>
+            </a>
+            <a href="biens.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-building text-xl"></i>
+                <span class="text-xs">Biens</span>
+            </a>
+            <a href="finances.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-chart-line text-xl"></i>
+                <span class="text-xs">Finances</span>
+            </a>
+            <a href="locataires.html" class="flex flex-col items-center text-yellow-600">
+                <i class="fas fa-users text-xl"></i>
+                <span class="text-xs">Locataires</span>
+            </a>
+            <a href="profil.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-user text-xl"></i>
+                <span class="text-xs">Profil</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- En-tête -->
+    <header class="bg-white shadow-md p-4 flex items-center justify-between sticky top-0 z-40">
+        <div class="flex items-center">
+            <a href="locataires.html" class="text-blue-500 mr-2">
+                <i class="fas fa-arrow-left"></i> RETOUR
+            </a>
+        </div>
+        <h1 class="text-lg font-semibold">Ajouter un locataire</h1>
+        <div class="w-8"></div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="container mx-auto px-4 py-4 mb-20">
+        <!-- Formulaire d'ajout de locataire -->
+        <form class="space-y-6">
+            <!-- Photo de profil -->
+            <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center">
+                <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-user text-gray-300 text-4xl"></i>
+                </div>
+                <button type="button" class="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-md text-sm flex items-center">
+                    <i class="fas fa-camera mr-2"></i> Ajouter une photo
+                </button>
+            </div>
+
+            <!-- Informations personnelles -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Informations personnelles</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">
+                            Nom <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="lastName" name="lastName" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: GONG" required>
+                    </div>
+                    
+                    <div>
+                        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">
+                            Prénom(s)
+                        </label>
+                        <input type="text" id="firstName" name="firstName" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: Jean Pierre">
+                    </div>
+                    
+                    <div>
+                        <label for="gender" class="block text-sm font-medium text-gray-700 mb-1">
+                            Genre
+                        </label>
+                        <select id="gender" name="gender" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <option value="" selected disabled>Sélectionner un genre</option>
+                            <option value="male">Homme</option>
+                            <option value="female">Femme</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="birthdate" class="block text-sm font-medium text-gray-700 mb-1">
+                            Date de naissance
+                        </label>
+                        <input type="date" id="birthdate" name="birthdate" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    </div>
+                    
+                    <div>
+                        <label for="nationality" class="block text-sm font-medium text-gray-700 mb-1">
+                            Nationalité
+                        </label>
+                        <input type="text" id="nationality" name="nationality" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: Camerounaise">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coordonnées -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Coordonnées</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                            Téléphone <span class="text-red-500">*</span>
+                        </label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 6XX XXX XXX" required>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                            Email
+                        </label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: nom@exemple.com">
+                    </div>
+                    
+                    <div>
+                        <label for="emergencyContact" class="block text-sm font-medium text-gray-700 mb-1">
+                            Contact d'urgence
+                        </label>
+                        <input type="tel" id="emergencyContact" name="emergencyContact" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 6XX XXX XXX">
+                    </div>
+                    
+                    <div>
+                        <label for="emergencyName" class="block text-sm font-medium text-gray-700 mb-1">
+                            Nom du contact d'urgence
+                        </label>
+                        <input type="text" id="emergencyName" name="emergencyName" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: NDEWA David">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informations d'identité -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Informations d'identité</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="idType" class="block text-sm font-medium text-gray-700 mb-1">
+                            Type de pièce d'identité
+                        </label>
+                        <select id="idType" name="idType" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <option value="" selected disabled>Sélectionner le type</option>
+                            <option value="cni">Carte Nationale d'Identité</option>
+                            <option value="passport">Passeport</option>
+                            <option value="drivingLicense">Permis de conduire</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="idNumber" class="block text-sm font-medium text-gray-700 mb-1">
+                            Numéro de pièce d'identité
+                        </label>
+                        <input type="text" id="idNumber" name="idNumber" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 100589745">
+                    </div>
+                    
+                    <div>
+                        <label for="idExpiry" class="block text-sm font-medium text-gray-700 mb-1">
+                            Date d'expiration
+                        </label>
+                        <input type="date" id="idExpiry" name="idExpiry" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    </div>
+                    
+                    <div class="pt-2">
+                        <button type="button" class="w-full py-2 border border-gray-300 text-gray-700 rounded-md flex items-center justify-center">
+                            <i class="fas fa-upload mr-2 text-yellow-600"></i> Ajouter une copie de la pièce d'identité
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informations professionnelles -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Informations professionnelles</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="profession" class="block text-sm font-medium text-gray-700 mb-1">
+                            Profession
+                        </label>
+                        <input type="text" id="profession" name="profession" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: Enseignant">
+                    </div>
+                    
+                    <div>
+                        <label for="employer" class="block text-sm font-medium text-gray-700 mb-1">
+                            Employeur
+                        </label>
+                        <input type="text" id="employer" name="employer" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: Lycée de Ndewa">
+                    </div>
+                    
+                    <div>
+                        <label for="monthlyIncome" class="block text-sm font-medium text-gray-700 mb-1">
+                            Revenu mensuel (FCFA)
+                        </label>
+                        <input type="number" id="monthlyIncome" name="monthlyIncome" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 150000">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Notes</h2>
+                
+                <div>
+                    <textarea id="notes" name="notes" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ajoutez des notes sur ce locataire..."></textarea>
+                </div>
+            </div>
+
+            <!-- Boutons d'action -->
+            <div class="flex space-x-3">
+                <button type="button" class="w-1/2 py-3 bg-gray-200 text-gray-700 font-medium rounded-md">
+                    Annuler
+                </button>
+                <button type="submit" class="w-1/2 py-3 bg-yellow-500 text-white font-medium rounded-md">
+                    Enregistrer
+                </button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

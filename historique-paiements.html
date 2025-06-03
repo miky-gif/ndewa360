@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndewa360° - Historique des paiements</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Barre de navigation mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50">
+        <div class="flex justify-around py-2">
+            <a href="index.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-home text-xl"></i>
+                <span class="text-xs">Accueil</span>
+            </a>
+            <a href="biens.html" class="flex flex-col items-center text-yellow-600">
+                <i class="fas fa-building text-xl"></i>
+                <span class="text-xs">Biens</span>
+            </a>
+            <a href="finances.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-chart-line text-xl"></i>
+                <span class="text-xs">Finances</span>
+            </a>
+            <a href="locataires.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-users text-xl"></i>
+                <span class="text-xs">Locataires</span>
+            </a>
+            <a href="profil.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-user text-xl"></i>
+                <span class="text-xs">Profil</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- En-tête -->
+    <header class="bg-white shadow-md p-4 flex items-center justify-between sticky top-0 z-40">
+        <div class="flex items-center">
+            <a href="biens.html" class="text-blue-500 mr-2">
+                <i class="fas fa-arrow-left"></i> RETOUR VERS BIEN
+            </a>
+        </div>
+        <a href="ajouter-paiement.html" class="bg-yellow-600 text-white px-3 py-1 rounded-md flex items-center text-sm hover:bg-yellow-700">
+            <i class="fas fa-plus mr-1"></i> Ajouter un paiement
+        </a>
+    </header>
+
+    <!-- Info bien -->
+    <div class="bg-white shadow-sm mb-4">
+        <div class="flex items-center p-4">
+            <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                <span>D</span>
+            </div>
+            <div>
+                <h2 class="font-semibold">Maison en terre</h2>
+                <p class="text-xs text-gray-500">#PROF_V33</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Onglets -->
+    <div class="bg-white shadow-sm mb-4 overflow-x-auto">
+        <div class="px-4 flex space-x-2 py-2 whitespace-nowrap">
+            <a href="unites-locatives.html" class="px-3 py-2 text-gray-600 rounded-md text-sm">
+                Unités locatives (4)
+            </a>
+            <a href="finances.html" class="px-3 py-2 text-gray-600 rounded-md text-sm">
+                Finances
+            </a>
+            <a href="locataires.html" class="px-3 py-2 text-gray-600 rounded-md text-sm">
+                Locataires (4)
+            </a>
+            <a href="details-locations.html" class="px-3 py-2 text-gray-600 rounded-md text-sm">
+                Voir locations (4)
+            </a>
+            <a href="historique-paiements.html" class="px-3 py-2 bg-yellow-100 text-yellow-600 rounded-md text-sm">
+                Historique des paiements
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <main class="container mx-auto px-4 py-4 mb-16">
+        <!-- Filtres et export -->
+        <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-semibold">Filtres</h3>
+                <button class="bg-yellow-500 text-white px-3 py-1 rounded-md text-sm flex items-center">
+                    <i class="fas fa-file-export mr-1"></i> Exporter
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-3">
+                <div class="relative">
+                    <input type="text" placeholder="Rechercher un locataire" class="w-full pl-8 pr-3 py-2 border border-gray-300 rounded-md text-sm">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+                <div class="relative">
+                    <select class="w-full pl-3 pr-8 py-2 border border-gray-300 rounded-md text-sm appearance-none">
+                        <option>Tous les mois</option>
+                        <option>Janvier</option>
+                        <option>Février</option>
+                        <option>Mars</option>
+                    </select>
+                    <i class="fas fa-chevron-down absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                </div>
+                <div class="relative">
+                    <select class="w-full pl-3 pr-8 py-2 border border-gray-300 rounded-md text-sm appearance-none">
+                        <option>2024</option>
+                        <option>2023</option>
+                        <option>2022</option>
+                    </select>
+                    <i class="fas fa-chevron-down absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vue mobile des paiements -->
+        <div class="lg:hidden space-y-4">
+            <h3 class="font-semibold text-gray-700 mb-2">Historique des paiements</h3>
+            
+            <!-- Paiement 1 -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h4 class="font-semibold">GONG</h4>
+                        <p class="text-sm text-gray-500">Chambre room_K66</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="font-semibold text-gray-900">5 000 FCFA</span>
+                        <p class="text-xs text-gray-500">1 janvier 2024</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-gray-500">Maison en terre</span>
+                    <div>
+                        <button class="text-yellow-500 mr-2"><i class="fas fa-pencil-alt"></i></button>
+                        <button class="text-red-500"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Paiement 2 -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h4 class="font-semibold">GONG</h4>
+                        <p class="text-sm text-gray-500">Chambre room_K66</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="font-semibold text-gray-900">5 000 FCFA</span>
+                        <p class="text-xs text-gray-500">1 février 2024</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-gray-500">Maison en terre</span>
+                    <div>
+                        <button class="text-yellow-500 mr-2"><i class="fas fa-pencil-alt"></i></button>
+                        <button class="text-red-500"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Paiement 3 -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h4 class="font-semibold">GONG</h4>
+                        <p class="text-sm text-gray-500">Chambre room_K66</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="font-semibold text-gray-900">5 000 FCFA</span>
+                        <p class="text-xs text-gray-500">1 mars 2024</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-gray-500">Maison en terre</span>
+                    <div>
+                        <button class="text-yellow-500 mr-2"><i class="fas fa-pencil-alt"></i></button>
+                        <button class="text-red-500"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Paiement 4 -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h4 class="font-semibold">NGWA NEBA</h4>
+                        <p class="text-sm text-gray-500">Chambre room_J31</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="font-semibold text-gray-900">5 000 FCFA</span>
+                        <p class="text-xs text-gray-500">1 janvier 2024</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-gray-500">Maison en terre</span>
+                    <div>
+                        <button class="text-yellow-500 mr-2"><i class="fas fa-pencil-alt"></i></button>
+                        <button class="text-red-500"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bouton flottant pour ajouter un paiement -->
+        <div class="fixed right-6 bottom-20 z-40">
+            <button class="bg-yellow-500 hover:bg-yellow-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg">
+                <i class="fas fa-plus text-xl"></i>
+            </button>
+        </div>
+    </main>
+</body>
+</html>

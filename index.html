@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndewa360° - Gestion Immobilière</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="custom.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .welcome-gradient {
+            background: linear-gradient(135deg, #fcf0de 0%, #ffefd5 100%);
+        }
+        .stat-box {
+            transition: all 0.3s ease;
+        }
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+        .animated-card {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        .animated-card:nth-child(1) { animation-delay: 0.1s; }
+        .animated-card:nth-child(2) { animation-delay: 0.2s; }
+        .animated-card:nth-child(3) { animation-delay: 0.3s; }
+        .animated-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Barre de navigation mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50">
+        <div class="flex justify-around py-2">
+            <a href="index.html" class="flex flex-col items-center text-yellow-600">
+                <i class="fas fa-home text-xl"></i>
+                <span class="text-xs font-medium">Accueil</span>
+            </a>
+            <a href="biens.html" class="flex flex-col items-center text-gray-500 hover:text-yellow-600 transition-colors">
+                <i class="fas fa-building text-xl"></i>
+                <span class="text-xs">Biens</span>
+            </a>
+            <a href="finances.html" class="flex flex-col items-center text-gray-500 hover:text-yellow-600 transition-colors">
+                <i class="fas fa-chart-line text-xl"></i>
+                <span class="text-xs">Finances</span>
+            </a>
+            <a href="locataires.html" class="flex flex-col items-center text-gray-500 hover:text-yellow-600 transition-colors">
+                <i class="fas fa-users text-xl"></i>
+                <span class="text-xs">Locataires</span>
+            </a>
+            <a href="profil.html" class="flex flex-col items-center text-gray-500 hover:text-yellow-600 transition-colors">
+                <i class="fas fa-user text-xl"></i>
+                <span class="text-xs">Profil</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- En-tête -->
+    <header class="bg-white shadow-md p-4 sticky top-0 z-40">
+        <div class="w-full flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="logo-basic-nobg.png" alt="Ndewa360°" class="h-10">
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="notifications.html" class="relative p-2 rounded-full hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-bell text-gray-600"></i>
+                    <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+                </a>
+                <a href="aide.html" class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-question-circle text-gray-600"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="container mx-auto px-4 py-4 mb-20">
+        <!-- Message de bienvenue -->
+        <div class="welcome-gradient rounded-xl shadow-md p-5 mb-6">
+            <div class="flex flex-col items-center justify-center py-3">
+                <img src="logo-basic-nobg.png" alt="Ndewa360°" class="h-16 mb-3">
+                <h1 class="text-xl font-bold text-center text-gray-800">Bonjour NDANDJA</h1>
+                <p class="text-md font-medium text-yellow-700 mb-2">Bienvenue sur Ndewa360°</p>
+                <p class="text-sm text-gray-600 text-center">
+                    Félicitations pour avoir commencé votre voyage avec <span class="font-semibold">Ndewa360°</span>.<br>
+                    Nous sommes ravis de vous aider à démarrer votre gestion immobilière.
+                </p>
+            </div>
+        </div>
+
+        <!-- Statistiques rapides -->
+        <div class="flex justify-between mb-6 overflow-x-auto py-2 -mx-4 px-4">
+            <div class="stat-box bg-white rounded-lg shadow-sm p-3 mr-3 min-w-[100px]">
+                <div class="flex flex-col items-center">
+                    <span class="text-xs text-gray-500">Biens</span>
+                    <span class="text-xl font-bold text-yellow-600">4</span>
+                </div>
+            </div>
+            <div class="stat-box bg-white rounded-lg shadow-sm p-3 mr-3 min-w-[100px]">
+                <div class="flex flex-col items-center">
+                    <span class="text-xs text-gray-500">Unités</span>
+                    <span class="text-xl font-bold text-yellow-600">12</span>
+                </div>
+            </div>
+            <div class="stat-box bg-white rounded-lg shadow-sm p-3 mr-3 min-w-[100px]">
+                <div class="flex flex-col items-center">
+                    <span class="text-xs text-gray-500">Locataires</span>
+                    <span class="text-xl font-bold text-yellow-600">8</span>
+                </div>
+            </div>
+            <div class="stat-box bg-white rounded-lg shadow-sm p-3 min-w-[100px]">
+                <div class="flex flex-col items-center">
+                    <span class="text-xs text-gray-500">Paiements</span>
+                    <span class="text-xl font-bold text-yellow-600">17</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions rapides -->
+        <h2 class="text-lg font-semibold text-gray-700 mb-3">Commencer avec Ndewa360°</h2>
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <a href="guide.html" class="block w-full animated-card">
+                <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center card-hover h-full">
+                    <div class="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-video text-yellow-600 text-xl"></i>
+                    </div>
+                    <h2 class="text-md font-medium text-gray-800">Guide de démarrage</h2>
+                    <p class="text-xs text-gray-500 text-center mt-1">Découvrez la plateforme avec nos guides vidéo</p>
+                    <div class="mt-2 px-3 py-1 bg-yellow-50 rounded-full">
+                        <p class="text-xs text-yellow-700"><i class="fas fa-play-circle mr-1"></i> 07:34</p>
+                    </div>
+                </div>
+            </a>
+            <a href="faq.html" class="block w-full animated-card">
+                <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center card-hover h-full">
+                    <div class="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-question text-yellow-600 text-xl"></i>
+                    </div>
+                    <h2 class="text-md font-medium text-gray-800">FAQ</h2>
+                    <p class="text-xs text-gray-500 text-center mt-1">Trouvez rapidement des réponses à vos questions</p>
+                    <div class="mt-2 px-3 py-1 bg-yellow-50 rounded-full">
+                        <p class="text-xs text-yellow-700"><i class="fas fa-search mr-1"></i> Rechercher</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <a href="support.html" class="block w-full animated-card">
+                <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center card-hover h-full">
+                    <div class="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-headset text-yellow-600 text-xl"></i>
+                    </div>
+                    <h2 class="text-md font-medium text-gray-800">Support</h2>
+                    <p class="text-xs text-gray-500 text-center mt-1">Besoin d'aide? Contactez notre équipe</p>
+                    <div class="mt-2 px-3 py-1 bg-yellow-50 rounded-full">
+                        <p class="text-xs text-yellow-700"><i class="fas fa-comments mr-1"></i> Chat</p>
+                    </div>
+                </div>
+            </a>
+            <a href="ajouter-bien.html" class="block w-full animated-card">
+                <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center card-hover h-full">
+                    <div class="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-plus text-yellow-600 text-xl"></i>
+                    </div>
+                    <h2 class="text-md font-medium text-gray-800">Ajouter un bien</h2>
+                    <p class="text-xs text-gray-500 text-center mt-1">Commencez à gérer vos biens immobiliers</p>
+                    <div class="mt-2 px-3 py-1 bg-yellow-50 rounded-full">
+                        <p class="text-xs text-yellow-700"><i class="fas fa-arrow-right mr-1"></i> Démarrer</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* Ndewa360° Custom Styles */
+
+/* Amélioration des images */
+.property-image, .unit-image {
+    height: 180px !important;
+    width: 100%;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Ciblage des images dans les unités locatives par sélecteur */
+.unites-locatives .bg-white .relative img,
+.bg-white.rounded-lg.shadow-sm.overflow-hidden .relative img {
+    height: 160px !important;
+    width: 100%;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Améliorations pour la page finances */
+.finance-card {
+    transition: all 0.3s ease;
+}
+
+.finance-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Améliorations pour les formulaires */
+.form-section {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    background-color: #f9fafb;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #eab308;
+    box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.1);
+}
+
+/* Animations subtiles */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Améliorations UI spécifiques */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-paid {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.status-pending {
+    background-color: #fef9c3;
+    color: #854d0e;
+}
+
+.status-late {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Amélioration des cartes */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}

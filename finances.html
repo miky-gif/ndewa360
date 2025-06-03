@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndewa360° - Finances</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="custom.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Barre de navigation mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50">
+        <div class="flex justify-around py-2">
+            <a href="index.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-home text-xl"></i>
+                <span class="text-xs">Accueil</span>
+            </a>
+            <a href="biens.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-building text-xl"></i>
+                <span class="text-xs">Biens</span>
+            </a>
+            <a href="finances.html" class="flex flex-col items-center text-yellow-600">
+                <i class="fas fa-chart-line text-xl"></i>
+                <span class="text-xs">Finances</span>
+            </a>
+            <a href="locataires.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-users text-xl"></i>
+                <span class="text-xs">Locataires</span>
+            </a>
+            <a href="profil.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-user text-xl"></i>
+                <span class="text-xs">Profil</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- En-tête -->
+    <header class="bg-white shadow-md p-4 flex items-center justify-between sticky top-0 z-40">
+        <div class="flex items-center">
+            <a href="biens.html" class="text-blue-500 mr-2">
+                <i class="fas fa-arrow-left"></i> RETOUR VERS BIEN
+            </a>
+        </div>
+        <a href="ajouter-paiement.html" class="bg-yellow-600 text-white px-3 py-1 rounded-md flex items-center text-sm hover:bg-yellow-700">
+            <i class="fas fa-plus mr-1"></i> Ajouter un paiement
+        </a>
+    </header>
+
+    <!-- Barre latérale de navigation pour la page -->
+    <div class="bg-white shadow-sm mb-4">
+        <div class="flex items-center p-4">
+            <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                <span>D</span>
+            </div>
+            <div>
+                <h2 class="font-semibold">Maison en terre</h2>
+                <p class="text-xs text-gray-500">#PROF_V33</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Onglets de navigation -->
+    <div class="bg-white shadow-sm mb-4">
+        <div class="px-4 flex space-x-2 overflow-x-auto py-2">
+            <a href="unites-locatives.html" class="px-3 py-2 text-gray-600 rounded-md text-sm whitespace-nowrap">
+                Unités locatives (4)
+            </a>
+            <a href="finances.html" class="px-3 py-2 bg-yellow-100 text-yellow-600 rounded-md text-sm whitespace-nowrap">
+                Finances
+            </a>
+            <a href="locataires.html" class="px-3 py-2 text-gray-600 rounded-md text-sm whitespace-nowrap">
+                Locataires (4)
+            </a>
+            <a href="details-locations.html" class="px-3 py-2 text-gray-600 rounded-md text-sm whitespace-nowrap">
+                Voir locations (4)
+            </a>
+            <a href="historique-paiements.html" class="px-3 py-2 text-gray-600 rounded-md text-sm whitespace-nowrap">
+                Historique des paiements
+            </a>
+        </div>
+    </div>
+
+    <!-- Détails supplémentaires -->
+    <div class="bg-white shadow-sm mb-4 p-4">
+        <div class="flex items-center">
+            <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+            <span class="text-sm text-gray-600">Inconnu</span>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <main class="container mx-auto px-4 py-4 mb-20">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-lg font-semibold">VUE D'ENSEMBLE</h2>
+            <select class="px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm">
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+            </select>
+        </div>
+
+        <!-- Sélecteur d'année -->
+        <div class="flex justify-end mb-4">
+            <select class="bg-white border border-gray-300 text-gray-700 text-sm rounded-md px-3 py-1">
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+            </select>
+        </div>
+
+        <!-- Widgets de statistiques -->
+        <!-- Cartes de synthèse -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <!-- Revenu total -->
+            <div class="bg-white rounded-lg shadow-sm p-3">
+                <h3 class="text-xs text-gray-500">REVENU TOTAL</h3>
+                <p class="text-xl font-bold text-green-600">150 000 FCFA</p>
+                <p class="text-xs text-gray-500">10 paiements</p>
+            </div>
+            
+            <!-- Dépenses -->
+            <div class="bg-white rounded-lg shadow-sm p-3">
+                <h3 class="text-xs text-gray-500">DÉPENSES</h3>
+                <p class="text-xl font-bold text-red-600">15 000 FCFA</p>
+                <p class="text-xs text-gray-500">2 dépenses</p>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 gap-4 mb-6">
+            <!-- Widget Paiements récents -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="text-base font-semibold">Paiements récents</h3>
+                    <a href="historique-paiements.html" class="text-xs text-yellow-600">Voir tout</a>
+                </div>
+                <div class="overflow-x-auto mb-3">
+                    <table class="min-w-full divide-y divide-gray-200 text-sm">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Locataire</th>
+                                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Montant</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-3 py-2">GONG</td>
+                                <td class="px-3 py-2">01/06/2025</td>
+                                <td class="px-3 py-2 text-green-600 font-medium">15 000 FCFA</td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-2">NGWAIN ELVETTE</td>
+                                <td class="px-3 py-2">28/05/2025</td>
+                                <td class="px-3 py-2 text-green-600 font-medium">25 000 FCFA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Widget Locataires -->
+                <h3 class="text-base font-semibold mb-3">Paiements par locataire</h3>
+                <div class="flex items-center">
+                    <div class="w-1/3">
+                        <div class="relative w-24 h-24 mx-auto">
+                            <svg viewBox="0 0 36 36" class="w-full h-full">
+                                <path d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none" stroke="#E5E7EB" stroke-width="3" />
+                                <path d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none" stroke="#3B82F6" stroke-width="3" stroke-dasharray="100, 100" />
+                                <text x="18" y="20.5" text-anchor="middle" class="text-lg font-semibold">4/4</text>
+                            </svg>
+                            <p class="text-xs text-gray-500 text-center mt-2">Locataires</p>
+                        </div>
+                    </div>
+                    <div class="w-2/3">
+                        <canvas id="paymentChart" height="120"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Widget Occupation -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h3 class="text-base font-semibold mb-3">Taux d'occupation</h3>
+                <div class="flex justify-between items-center">
+                    <div class="relative w-24 h-24">
+                        <svg class="w-full h-full" viewBox="0 0 36 36">
+                            <circle cx="18" cy="18" r="15.91549430918954" fill="transparent" stroke="#f3f4f6" stroke-width="3"></circle>
+                            <circle cx="18" cy="18" r="15.91549430918954" fill="transparent" stroke="#FBBF24" stroke-width="3" stroke-dasharray="75 25" stroke-dashoffset="0"></circle>
+                            <text x="18" y="18.5" text-anchor="middle" dy=".3em" class="text-xs font-medium">75%</text>
+                        </svg>
+                        <p class="text-xs text-gray-500 text-center mt-1">Unités occupées</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-center mb-2">
+                            <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                            <span class="text-sm">Occupé: 3</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-gray-300 mr-2"></div>
+                            <span class="text-sm">Libre: 1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tableau des cautions -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="text-base font-semibold">Cautions</h3>
+                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">Total: 65 000 FCFA</span>
+                </div>
+                
+                <!-- Affichage mobile des cautions -->
+                <div class="space-y-3 md:hidden">
+                    <!-- Caution 1 -->
+                    <div class="border border-gray-200 rounded-md p-3">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-medium">GONG</span>
+                            <span class="text-yellow-600 font-medium">25 000 FCFA</span>
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            <p>Chambre room_K66</p>
+                            <p>Payé le: 15/01/2025</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Caution 2 -->
+                    <div class="border border-gray-200 rounded-md p-3">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-medium">NGWA NEBA</span>
+                            <span class="text-yellow-600 font-medium">40 000 FCFA</span>
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            <p>Studio studio_T28</p>
+                            <p>Payé le: 03/03/2025</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tableau pour écrans plus grands -->
+                <div class="hidden md:block overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 text-sm">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Locataire</th>
+                                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unité</th>
+                                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date de paiement</th>
+                                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Montant</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-3 py-2">GONG</td>
+                                <td class="px-3 py-2">Chambre room_K66</td>
+                                <td class="px-3 py-2">15/01/2025</td>
+                                <td class="px-3 py-2">25 000 FCFA</td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-2">NGWA NEBA</td>
+                                <td class="px-3 py-2">Studio studio_T28</td>
+                                <td class="px-3 py-2">03/03/2025</td>
+                                <td class="px-3 py-2">40 000 FCFA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Configuration du graphique de paiement pour mobile - simplifié
+        const ctx = document.getElementById('paymentChart').getContext('2d');
+        const paymentChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'],
+                datasets: [
+                    {
+                        label: 'NGWAIN',
+                        data: [0, 15000, 15000, 15000, 15000, 0, 0, 0, 0, 0, 0, 0],
+                        borderColor: '#3B82F6',
+                        tension: 0.1,
+                        pointRadius: 2
+                    },
+                    {
+                        label: 'GONG',
+                        data: [15000, 15000, 0, 15000, 15000, 15000, 0, 0, 0, 0, 0, 0],
+                        borderColor: '#6366F1',
+                        tension: 0.1,
+                        pointRadius: 2
+                    },
+                    {
+                        label: 'NEBA',
+                        data: [0, 0, 25000, 0, 0, 25000, 0, 0, 0, 0, 0, 0],
+                        borderColor: '#F59E0B',
+                        tension: 0.1,
+                        pointRadius: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value/1000 + 'k';
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 9
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            boxWidth: 8,
+                            font: {
+                                size: 9
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

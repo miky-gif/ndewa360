@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndewa360° - Détails de locations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Barre de navigation mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50">
+        <div class="flex justify-around py-2">
+            <a href="index.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-home text-xl"></i>
+                <span class="text-xs">Accueil</span>
+            </a>
+            <a href="biens.html" class="flex flex-col items-center text-yellow-600">
+                <i class="fas fa-building text-xl"></i>
+                <span class="text-xs">Biens</span>
+            </a>
+            <a href="finances.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-chart-line text-xl"></i>
+                <span class="text-xs">Finances</span>
+            </a>
+            <a href="locataires.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-users text-xl"></i>
+                <span class="text-xs">Locataires</span>
+            </a>
+            <a href="profil.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-user text-xl"></i>
+                <span class="text-xs">Profil</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- En-tête -->
+    <header class="bg-white shadow-md p-4 flex items-center justify-between sticky top-0 z-40">
+        <div class="flex items-center">
+            <a href="biens.html" class="text-blue-500 mr-2">
+                <i class="fas fa-arrow-left"></i> RETOUR VERS BIEN
+            </a>
+        </div>
+        <a href="ajouter-contrat.html" class="bg-yellow-600 text-white px-3 py-1 rounded-md flex items-center text-sm hover:bg-yellow-700">
+            <i class="fas fa-plus mr-1"></i> Nouveau contrat
+        </a>
+    </header>
+
+    <!-- Barre latérale de navigation pour la page -->
+    <div class="bg-white shadow-sm mb-4">
+        <div class="flex items-center p-4">
+            <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                <span>D</span>
+            </div>
+            <div>
+                <h2 class="font-semibold">Maison en terre</h2>
+                <p class="text-xs text-gray-500">#PROF_V33</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Onglets de navigation -->
+    <div class="bg-white shadow-sm mb-4">
+        <div class="px-4 flex space-x-2 overflow-x-auto py-2">
+            <a href="unites-locatives.html" class="px-3 py-2 text-gray-600 rounded-md text-sm whitespace-nowrap">
+                Unités locatives (4)
+            </a>
+            <a href="finances.html" class="px-3 py-2 text-gray-600 rounded-md text-sm whitespace-nowrap">
+                Finances
+            </a>
+            <a href="locataires.html" class="px-3 py-2 text-gray-600 rounded-md text-sm whitespace-nowrap">
+                Locataires (4)
+            </a>
+            <a href="details-locations.html" class="px-3 py-2 bg-yellow-100 text-yellow-600 rounded-md text-sm whitespace-nowrap">
+                Voir locations (4)
+            </a>
+            <a href="historique-paiements.html" class="px-3 py-2 text-gray-600 rounded-md text-sm whitespace-nowrap">
+                Historique des paiements
+            </a>
+        </div>
+    </div>
+
+    <!-- Détails supplémentaires -->
+    <div class="bg-white shadow-sm mb-4 p-4">
+        <div class="flex items-center">
+            <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+            <span class="text-sm text-gray-600">Inconnu</span>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <main class="container mx-auto px-4 py-4 mb-16">
+        <!-- Liste des contrats de location -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-4">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Locataire</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unité</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date d'entrée</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">État de paiement</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Contrat 1 -->
+                        <tr>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm font-medium text-gray-900">GONG</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm text-gray-500">Chambre room_K66</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm text-gray-500">1 janv. 2024</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    À jour
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap text-right text-sm font-medium">
+                                <a href="#" class="text-blue-600 hover:text-blue-900 mr-2">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="text-green-600 hover:text-green-900 mr-2">
+                                    <i class="fas fa-file-invoice"></i>
+                                </a>
+                                <a href="#" class="text-yellow-600 hover:text-yellow-900">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <!-- Contrat 2 -->
+                        <tr>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm font-medium text-gray-900">NGWA NEBA</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm text-gray-500">Chambre room_J31</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm text-gray-500">1 janv. 2024</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    À jour
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap text-right text-sm font-medium">
+                                <a href="#" class="text-blue-600 hover:text-blue-900 mr-2">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="text-green-600 hover:text-green-900 mr-2">
+                                    <i class="fas fa-file-invoice"></i>
+                                </a>
+                                <a href="#" class="text-yellow-600 hover:text-yellow-900">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <!-- Contrat 3 -->
+                        <tr>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm font-medium text-gray-900">EPIE</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm text-gray-500">Studio studio_M39</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm text-gray-500">1 janv. 2024</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    À jour
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap text-right text-sm font-medium">
+                                <a href="#" class="text-blue-600 hover:text-blue-900 mr-2">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="text-green-600 hover:text-green-900 mr-2">
+                                    <i class="fas fa-file-invoice"></i>
+                                </a>
+                                <a href="#" class="text-yellow-600 hover:text-yellow-900">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <!-- Contrat 4 -->
+                        <tr>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm font-medium text-gray-900">NGWAIN ELVETTE</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm text-gray-500">Studio studio_T28</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <div class="text-sm text-gray-500">1 sept. 2024</div>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    À jour
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap text-right text-sm font-medium">
+                                <a href="#" class="text-blue-600 hover:text-blue-900 mr-2">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="text-green-600 hover:text-green-900 mr-2">
+                                    <i class="fas fa-file-invoice"></i>
+                                </a>
+                                <a href="#" class="text-yellow-600 hover:text-yellow-900">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Vue mobile optimisée pour les contrats de location -->
+        <div class="lg:hidden">
+            <h2 class="text-lg font-semibold mb-3">Vue adaptée mobile</h2>
+            <div class="space-y-3">
+                <!-- Carte contrat 1 -->
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">GONG</h3>
+                            <p class="text-sm text-gray-500">Chambre room_K66</p>
+                        </div>
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            À jour
+                        </span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="far fa-calendar-alt mr-1"></i>
+                        <span>Date d'entrée: 1 janv. 2024</span>
+                    </div>
+                    <div class="flex justify-end space-x-2">
+                        <a href="#" class="text-blue-600 hover:text-blue-900">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a href="#" class="text-green-600 hover:text-green-900">
+                            <i class="fas fa-file-invoice"></i>
+                        </a>
+                        <a href="#" class="text-yellow-600 hover:text-yellow-900">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Carte contrat 2 -->
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">NGWA NEBA</h3>
+                            <p class="text-sm text-gray-500">Chambre room_J31</p>
+                        </div>
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            À jour
+                        </span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="far fa-calendar-alt mr-1"></i>
+                        <span>Date d'entrée: 1 janv. 2024</span>
+                    </div>
+                    <div class="flex justify-end space-x-2">
+                        <a href="#" class="text-blue-600 hover:text-blue-900">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a href="#" class="text-green-600 hover:text-green-900">
+                            <i class="fas fa-file-invoice"></i>
+                        </a>
+                        <a href="#" class="text-yellow-600 hover:text-yellow-900">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Carte contrat 3 -->
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">EPIE</h3>
+                            <p class="text-sm text-gray-500">Studio studio_M39</p>
+                        </div>
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            À jour
+                        </span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="far fa-calendar-alt mr-1"></i>
+                        <span>Date d'entrée: 1 janv. 2024</span>
+                    </div>
+                    <div class="flex justify-end space-x-2">
+                        <a href="#" class="text-blue-600 hover:text-blue-900">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a href="#" class="text-green-600 hover:text-green-900">
+                            <i class="fas fa-file-invoice"></i>
+                        </a>
+                        <a href="#" class="text-yellow-600 hover:text-yellow-900">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Carte contrat 4 -->
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">NGWAIN ELVETTE</h3>
+                            <p class="text-sm text-gray-500">Studio studio_T28</p>
+                        </div>
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            À jour
+                        </span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="far fa-calendar-alt mr-1"></i>
+                        <span>Date d'entrée: 1 sept. 2024</span>
+                    </div>
+                    <div class="flex justify-end space-x-2">
+                        <a href="#" class="text-blue-600 hover:text-blue-900">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a href="#" class="text-green-600 hover:text-green-900">
+                            <i class="fas fa-file-invoice"></i>
+                        </a>
+                        <a href="#" class="text-yellow-600 hover:text-yellow-900">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Boutons d'action flottants -->
+    <div class="fixed bottom-16 left-0 right-0 flex justify-center space-x-3 mb-3">
+        <button class="bg-yellow-600 text-white px-4 py-2 rounded-md flex items-center">
+            <i class="fas fa-plus mr-2"></i> Nouveau contrat
+        </button>
+    </div>
+</body>
+</html>

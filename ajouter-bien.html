@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndewa360° - Ajouter un bien</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Barre de navigation mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50">
+        <div class="flex justify-around py-2">
+            <a href="index.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-home text-xl"></i>
+                <span class="text-xs">Accueil</span>
+            </a>
+            <a href="biens.html" class="flex flex-col items-center text-yellow-600">
+                <i class="fas fa-building text-xl"></i>
+                <span class="text-xs">Biens</span>
+            </a>
+            <a href="finances.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-chart-line text-xl"></i>
+                <span class="text-xs">Finances</span>
+            </a>
+            <a href="locataires.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-users text-xl"></i>
+                <span class="text-xs">Locataires</span>
+            </a>
+            <a href="profil.html" class="flex flex-col items-center text-gray-500">
+                <i class="fas fa-user text-xl"></i>
+                <span class="text-xs">Profil</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- En-tête -->
+    <header class="bg-white shadow-md p-4 flex items-center justify-between sticky top-0 z-40">
+        <div class="flex items-center">
+            <a href="biens.html" class="text-blue-500 mr-2">
+                <i class="fas fa-arrow-left"></i> RETOUR
+            </a>
+        </div>
+        <h1 class="text-lg font-semibold">Ajouter un bien</h1>
+        <div class="w-8"></div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="container mx-auto px-4 py-4 mb-20">
+        <!-- Formulaire d'ajout de bien -->
+        <form class="space-y-6">
+            <!-- Section photos -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Photos</h2>
+                
+                <div class="grid grid-cols-3 gap-2 mb-4">
+                    <div class="aspect-square bg-gray-100 rounded-md flex items-center justify-center">
+                        <i class="fas fa-plus text-gray-400"></i>
+                    </div>
+                    <div class="aspect-square bg-gray-100 rounded-md flex items-center justify-center">
+                        <i class="fas fa-plus text-gray-400"></i>
+                    </div>
+                    <div class="aspect-square bg-gray-100 rounded-md flex items-center justify-center">
+                        <i class="fas fa-plus text-gray-400"></i>
+                    </div>
+                </div>
+                
+                <button type="button" class="w-full py-2 bg-yellow-100 text-yellow-700 rounded-md flex items-center justify-center">
+                    <i class="fas fa-camera mr-2"></i> Ajouter des photos
+                </button>
+            </div>
+
+            <!-- Informations de base -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Informations de base</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+                            Nom du bien <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: Maison en terre" required>
+                    </div>
+                    
+                    <div>
+                        <label for="propertyType" class="block text-sm font-medium text-gray-700 mb-1">
+                            Type de bien <span class="text-red-500">*</span>
+                        </label>
+                        <select id="propertyType" name="propertyType" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <option value="" disabled selected>Sélectionner le type de bien</option>
+                            <option value="house">Maison</option>
+                            <option value="apartment">Appartement</option>
+                            <option value="building">Immeuble</option>
+                            <option value="land">Terrain</option>
+                            <option value="commercial">Local commercial</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="description" class="block text-sm font-medium text-gray-700 mb-1">
+                            Description
+                        </label>
+                        <textarea id="description" name="description" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Décrivez votre bien..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Localisation -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Localisation</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="address" class="block text-sm font-medium text-gray-700 mb-1">
+                            Adresse
+                        </label>
+                        <input type="text" id="address" name="address" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 123 Rue Principale">
+                    </div>
+                    
+                    <div>
+                        <label for="city" class="block text-sm font-medium text-gray-700 mb-1">
+                            Ville/Commune
+                        </label>
+                        <input type="text" id="city" name="city" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: Douala">
+                    </div>
+                    
+                    <div>
+                        <label for="district" class="block text-sm font-medium text-gray-700 mb-1">
+                            Quartier
+                        </label>
+                        <input type="text" id="district" name="district" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: Bonamoussadi">
+                    </div>
+                    
+                    <div class="pt-2">
+                        <button type="button" class="w-full py-2 border border-gray-300 text-gray-700 rounded-md flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-yellow-600"></i> Choisir sur la carte
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caractéristiques -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Caractéristiques</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="surface" class="block text-sm font-medium text-gray-700 mb-1">
+                            Surface totale (m²)
+                        </label>
+                        <input type="number" id="surface" name="surface" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 150">
+                    </div>
+                    
+                    <div>
+                        <label for="totalUnits" class="block text-sm font-medium text-gray-700 mb-1">
+                            Nombre d'unités locatives
+                        </label>
+                        <input type="number" id="totalUnits" name="totalUnits" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 4">
+                    </div>
+                    
+                    <div>
+                        <label for="yearBuilt" class="block text-sm font-medium text-gray-700 mb-1">
+                            Année de construction
+                        </label>
+                        <input type="number" id="yearBuilt" name="yearBuilt" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 2015">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="w-4 h-4 text-yellow-600 border-gray-300 rounded focus:ring-yellow-500">
+                                <span class="ml-2 text-sm text-gray-700">Eau</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="w-4 h-4 text-yellow-600 border-gray-300 rounded focus:ring-yellow-500">
+                                <span class="ml-2 text-sm text-gray-700">Électricité</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="w-4 h-4 text-yellow-600 border-gray-300 rounded focus:ring-yellow-500">
+                                <span class="ml-2 text-sm text-gray-700">Sécurité</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="w-4 h-4 text-yellow-600 border-gray-300 rounded focus:ring-yellow-500">
+                                <span class="ml-2 text-sm text-gray-700">Parking</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informations financières -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Informations financières</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="purchasePrice" class="block text-sm font-medium text-gray-700 mb-1">
+                            Prix d'achat (FCFA)
+                        </label>
+                        <input type="number" id="purchasePrice" name="purchasePrice" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 50000000">
+                    </div>
+                    
+                    <div>
+                        <label for="monthlyIncome" class="block text-sm font-medium text-gray-700 mb-1">
+                            Revenu mensuel estimé (FCFA)
+                        </label>
+                        <input type="number" id="monthlyIncome" name="monthlyIncome" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 200000">
+                    </div>
+                    
+                    <div>
+                        <label for="expenses" class="block text-sm font-medium text-gray-700 mb-1">
+                            Dépenses mensuelles estimées (FCFA)
+                        </label>
+                        <input type="number" id="expenses" name="expenses" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Ex: 50000">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents -->
+            <div class="bg-white rounded-lg shadow-sm p-4">
+                <h2 class="text-lg font-semibold mb-4">Documents</h2>
+                
+                <div class="space-y-3">
+                    <div class="border border-dashed border-gray-300 rounded-md p-4 text-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-file-upload text-gray-400 text-2xl mb-2"></i>
+                            <p class="text-sm text-gray-500">Titre foncier</p>
+                            <button type="button" class="mt-2 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-3 rounded-md">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-dashed border-gray-300 rounded-md p-4 text-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-file-upload text-gray-400 text-2xl mb-2"></i>
+                            <p class="text-sm text-gray-500">Contrat d'achat</p>
+                            <button type="button" class="mt-2 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-3 rounded-md">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-dashed border-gray-300 rounded-md p-4 text-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-file-upload text-gray-400 text-2xl mb-2"></i>
+                            <p class="text-sm text-gray-500">Autres documents</p>
+                            <button type="button" class="mt-2 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-3 rounded-md">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons d'action -->
+            <div class="flex space-x-3">
+                <button type="button" class="w-1/2 py-3 bg-gray-200 text-gray-700 font-medium rounded-md">
+                    Annuler
+                </button>
+                <button type="submit" class="w-1/2 py-3 bg-yellow-500 text-white font-medium rounded-md">
+                    Enregistrer
+                </button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
